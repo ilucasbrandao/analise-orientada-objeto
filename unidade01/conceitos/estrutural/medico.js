@@ -1,5 +1,3 @@
-import { Paciente } from "./paciente.js";
-
 export class Medico {
   #nome;
   #especialidade;
@@ -7,6 +5,7 @@ export class Medico {
   constructor(nome, especialidade) {
     this.#nome = nome;
     this.#especialidade = especialidade;
+    this.atendendo = false;
   }
 
   getNome() {
@@ -28,6 +27,23 @@ export class Medico {
   }
 
   realizar_consulta(paciente) {
-    console.log(`Atendimento aberto para o paciente: ${paciente.getNome()}`);
+    if (this.atendendo) {
+      console.log(
+        `${this.getNome()} já está em atendimento. Aguarde, ${paciente.getNome()}.`,
+      );
+      return;
+    }
+
+    this.atendendo = true;
+    console.log(`Atendimento iniciado para o paciente: ${paciente.getNome()}.`);
+  }
+
+  finalizar_consulta() {
+    if (!this.atendendo) {
+      console.log("O médico não está em consulta no momento.");
+      return;
+    }
+    this.atendendo = false;
+    console.log(`Consulta com finalizada com sucesso.`);
   }
 }

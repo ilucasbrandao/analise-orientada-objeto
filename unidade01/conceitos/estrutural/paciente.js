@@ -16,7 +16,7 @@ export class Paciente {
 
   setNome(nome) {
     this.#nome = nome;
-    return this.nome;
+    return this.#nome;
   }
 
   setIdade(idade) {
@@ -31,5 +31,6 @@ export class Paciente {
     console.log(
       `O paciente: ${this.#nome} solicitou uma consulta com o médico: ${medico.getNome()}`,
     );
+    medico.realizar_consulta(this);
   }
 }

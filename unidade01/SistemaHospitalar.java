@@ -55,19 +55,37 @@ class Administrativo extends Funcionario {
     }
 }
 
+class Enfermeiro extends Funcionario implements Plantonista {
+    public Enfermeiro(String nome, double salarioBase) {
+        super(nome, salarioBase);
+    }
+
+    @Override
+    public double calcularSalario(){
+        return this.salarioBase + 500;
+    }
+    @Override
+    public void realizarPlantao(){
+        System.out.println(nome + " está de plantão.");
+    }
+}
+
 // 4. CLASSE PRINCIPAL (Execução)
 public class SistemaHospitalar {
     public static void main(String[] args) {
         // Criando os objetos (Instanciação)
         Medico med = new Medico("Dr. Arnaldo", 5000);
         Administrativo adm = new Administrativo("Carla RH", 3000);
+        Enfermeiro enfer = new Enfermeiro("Ana Alves", 2800);
 
         System.out.println("--- Relatório de Funcionários ---");
         med.exibirDados();
         adm.exibirDados();
+        enfer.exibirDados();
 
         System.out.println("\n--- Ações de Hoje ---");
         med.realizarPlantao();
+        enfer.realizarPlantao();
         // adm.realizarPlantao(); // Se tentares isto, o Java dará erro (Segurança do código!)
     }
 }
