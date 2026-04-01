@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Uniasselvi/Uniasselvi.iml" filepath="$PROJECT_DIR$/Uniasselvi/Uniasselvi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/estudo-aoo/Uniasselvi.iml" filepath="$PROJECT_DIR$/estudo-aoo/Uniasselvi.iml" />
       <module fileurl="file://$PROJECT_DIR$/analise-orientada-objeto.iml" filepath="$PROJECT_DIR$/analise-orientada-objeto.iml" />
     </modules>
   </component>

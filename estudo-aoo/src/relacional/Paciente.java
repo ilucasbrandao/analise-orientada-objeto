@@ -26,5 +26,8 @@ public class Paciente extends Pessoa {
         this.idade = idade;
     }
 
-    public void solicitarProcedimento(){}
+    public void solicitarProcedimento(Medico medico) {
+        System.out.println("O paciente " + this.nome + " solicitou um procedimento ao médico " + medico.getNome());
+        medico.realizarProcedimento();
+    }
 }
